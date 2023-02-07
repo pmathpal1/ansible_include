@@ -1,0 +1,8 @@
+- name: This sets up an httpd webserver
+  hosts: worker-node1,worker-node3
+  become: true
+  gather_facts: false
+  tasks:
+    - include: tasks/deploy_httpd.yml
+    - include: tasks/deploy_git.yml
+    - include: tasks/useradd.yml
